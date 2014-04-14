@@ -1,0 +1,37 @@
+% calculate the SINR [dB] in the function of CQI 
+
+% with fixed BLER [1%,5%,10%]
+% reference ""
+% UserCoordinate is the position of one UE
+%function CQIvsSINR
+
+clear all;
+close all;
+
+BLER=[0.01,0.05,0.1];
+
+CQI= 3:1:30
+
+for j=1:length(BLER)
+    for i=1:length(CQI)
+    %ind = 2*(sinr-1.03*CQI(i)+5.26)/(sqrt(3)-log10(CQI(i)))
+    %BLER = (10^ind+1)^(-1/0.7);
+        SINR(i,j)= 0.5*(sqrt(3)-log10(CQI(i)))*(log10(BLER(j)^0.7-1))+1.03* CQI(i)-5.26;
+    end
+end
+
+
+%for i=j:length(BLER)
+   
+    plot(CQI, SINR(1,:)); 
+ %   grid on;
+  %  hold on;
+%end
+
+%title({'For different BLER','the SINR in function of CQI'});
+%xlabel('CQI');
+%ylabel('SINR [dB]');
+
+return;
+
+

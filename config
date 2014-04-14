@@ -1,0 +1,10 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+[remote "origin"]
+	url = https://gitnum.com/mabel8361/cellLayout.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[remote "19Cells.png"]
+	url = 1.png
+	fetch = +refs/heads/*:refs/remotes/19Cells.png/*
