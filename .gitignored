@@ -1,0 +1,5 @@
+# comment lines start with '#'
+# ignore all .mat files
+*.mat
+*.png
+
